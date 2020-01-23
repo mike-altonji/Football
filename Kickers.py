@@ -19,7 +19,7 @@ import pandas as pd
 import re
 import os
 
-if os.name == 'nt': os.chdir('C:/Users/mikea/Documents/Analytics/Football Analytics/Kickers/Football/')
+if os.name == 'nt': os.chdir('C:/Users/mikea/Documents/Analytics/Football Analytics/Kickers/')
 else: os.chdir('/home/mike/Analytics/Football Analytics/Kicker Web Scrape/')
 
 # -----------------------------------------------------------------------------
@@ -135,7 +135,11 @@ weather_df_final = weather_df.append(weather_df2)
 
 # Merge and subset
 total = kicks.merge(weather_df_final, how='left', on=['Team', 'year', 'week'])
+total.to_csv('kicking_merged.csv')
+
 df = total[(total['year'] >= 2012) & (total['year'] <= 2018)] # Range of dates with wind data
+
+
 
 # STILL NEED PATs!!!
 # -----------------------------------------------------------------------------
