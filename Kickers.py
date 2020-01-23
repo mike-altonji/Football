@@ -18,7 +18,9 @@ import numpy as np
 import pandas as pd
 import re
 import os
-os.chdir('/home/mike/Analytics/Football Analytics/Kicker Web Scrape/')
+
+if os.name == 'nt': os.chdir('C:/Users/mikea/Documents/Analytics/Football Analytics/Kickers/Football/')
+else: os.chdir('/home/mike/Analytics/Football Analytics/Kicker Web Scrape/')
 
 # -----------------------------------------------------------------------------
 ######### Weather Data
